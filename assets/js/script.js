@@ -41,10 +41,6 @@ var loadTasks = function() {
   });
 };
 
-var saveTasks = function() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-};
-
 $(".list-group").on("click", "p", function() {
 
   var text = $(this)
@@ -80,7 +76,9 @@ $(".list-group").on("blur", "textarea", function() {
   saveTasks();
 });
 
-
+var saveTasks = function() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+};
 
 // modal was triggered
 $("#task-form-modal").on("show.bs.modal", function() {
